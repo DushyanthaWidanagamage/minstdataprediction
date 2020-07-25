@@ -23,15 +23,14 @@ y_test = keras.utils.to_categorical(y_test, 10)
 
 # Define the nueral network input = 784, 2 hidden layers 784,150, 10 outputs
 model = Sequential()
-model.add(Dense(784, input_dim=784, activation='sigmoid'))
-model.add(Dense(150, activation='sigmoid'))
+model.add(Dense(40, input_dim=784, activation='sigmoid'))
 model.add(Dense(10, activation='sigmoid'))
 
 #Compile the model with error function as binary_crossentropy and evaluation method as accuracy
 model.compile(loss='binary_crossentropy', optimizer=SGD(learning_rate=0.0001), metrics=['accuracy'])
 
 # Fit training data
-model.fit(x_train1, y_train, epochs=20, batch_size=20)
+model.fit(x_train1, y_train, epochs=10, batch_size=10)
 
 #Cacluate accuracy using test data
 accuracy = model.evaluate(x_test1, y_test)
