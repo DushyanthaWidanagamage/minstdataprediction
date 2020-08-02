@@ -34,7 +34,7 @@ y_test = keras.utils.to_categorical(y_test, 10)
 
 # Define the nueral network input = 784, 2 hidden layers 784,150, 10 outputs
 model = Sequential()
-model.add(Dense(16, input_dim=784, activation='sigmoid'))
+model.add(Dense(40, input_dim=784, activation='sigmoid'))
 model.add(Dense(10, activation='sigmoid'))
 
 
